@@ -5,11 +5,11 @@ export default class App extends React.Component {
   state = {
     email: '',
     password: '',
-    showSignUp: false, // Add a state to toggle the SignUpScreen
+    showSignUp: false, // הוספת מצב כדי לעבור למסך הרשמה
   };
 
   handleLogin = () => {
-    // Implement login functionality here
+    // פוקצנליות של הרשמה
   };
 
   toggleSignUp = () => {

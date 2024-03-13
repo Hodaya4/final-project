@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function SignUpScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Sign Up Screen</Text>
+            <Text style={styles.text}>אוסנת והודיה יצליחו בסוף</Text>
             {/* להוסיף  */}
         </View>
     );
