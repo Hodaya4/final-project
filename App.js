@@ -8,11 +8,11 @@ export default class App extends React.Component {
         email: '',
         password: '' ,
         showLogin: false ,
-        showSignUp: false, // הוספת מצב כדי לעבור למסך הרשמה
+        showSignUp: false,
         showForgetPassword: false
     };
 
-    handleLogin = () => {
+    toggleLogin = () => {
         this.setState(prevState => ({ showLogin: !prevState.showLogin }));
     };
 
@@ -25,13 +25,13 @@ export default class App extends React.Component {
 
     render() {
         if (this.state.showSignUp) {
-            return <SignUpScreen />;
+            return <SignUpScreen toggleSignUp={this.toggleSignUp}/>;
         }
         if (this.state.showForgetPassword) {
             return <ForgotPasswordScreen/>;
         }
         if (this.state.showLogin) {
-            return < LoginScreen />;
+           return <LoginScreen/>;
         }
 
         return (
@@ -60,7 +60,7 @@ export default class App extends React.Component {
                     <TouchableOpacity onPress={this.toggleForgetPassword}>
                         <Text style={styles.forgot}>Forgot Password?</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.loginBtn} onPress={this.handleLogin}>
+                    <TouchableOpacity onPress={this.toggleLogin}>
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={this.toggleSignUp}>

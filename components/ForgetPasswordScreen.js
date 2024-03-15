@@ -1,59 +1,69 @@
-import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-const ForgotPasswordScreen = () => {
-    const handleForgotPassword = () => {
-        // Logic to handle forgot password request
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+
+export default class ForgotPasswordScreen extends React.Component {
+    state = {
+        email: '',
     };
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Forgot Password</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Enter your email"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-            />
-            <TouchableOpacity style={styles.button} onPress={handleForgotPassword}>
-                <Text style={styles.buttonText}>Submit</Text>
-            </TouchableOpacity>
-        </View>
-    );
-};
+    handleSendEmail = () => {
+
+    };
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.logo}>Forgot Password</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    keyboardType="email-address"
+                    onChangeText={text => this.setState({ email: text })}
+                />
+                <TouchableOpacity style={styles.button} onPress={this.handleSendEmail}>
+                    <Text style={styles.buttonText}>Send Email</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#003f5c',
     },
-    title: {
-        fontSize: 20,
+    logo: {
+        fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
+        color: '#fb5b5a',
     },
     input: {
         width: '80%',
         height: 40,
         borderWidth: 1,
         borderColor: '#ccc',
-        borderRadius: 5,
-        paddingHorizontal: 10,
+        borderRadius: 20,
         marginBottom: 20,
+        paddingHorizontal: 10,
+        backgroundColor: '#465881',
+        color: 'white',
     },
     button: {
-        backgroundColor: '#007bff',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 5,
+        width: '80%',
+        height: 40,
+        backgroundColor: '#fb5b5a',
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonText: {
-        color: '#fff',
+        color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
     },
 });
-
-export default ForgotPasswordScreen;
