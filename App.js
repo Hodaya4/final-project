@@ -8,7 +8,7 @@ export default class App extends React.Component {
         email: '',
         password: '' ,
         showLogin: false ,
-        showSignUp: false, // הוספת מצב כדי לעבור למסך הרשמה
+        showSignUp: false,
         showForgetPassword: false
     };
 
@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
     render() {
         if (this.state.showSignUp) {
-            return <SignUpScreen />;
+            return <SignUpScreen toggleSignUp={this.toggleSignUp}/>;
         }
         if (this.state.showForgetPassword) {
             return <ForgotPasswordScreen/>;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-const ForgotPasswordScreen = () => {
+const ForgotPasswordScreen = () => {   //לא טוב שזה קומפוננטת חץ
     const handleForgotPassword = () => {
         // Logic to handle forgot password request
     };
