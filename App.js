@@ -28,7 +28,7 @@ export default class App extends React.Component {
             return <SignUpScreen toggleSignUp={this.toggleSignUp}/>;
         }
         if (this.state.showForgetPassword) {
-            return <ForgotPasswordScreen/>;
+            return <ForgotPasswordScreen toggleForgetPassword={this.toggleForgetPassword}/>;
         }
         if (this.state.showLogin) {
            return <LoginScreen/>;
@@ -60,10 +60,10 @@ export default class App extends React.Component {
                     <TouchableOpacity onPress={this.toggleForgetPassword}>
                         <Text style={styles.forgot}>Forgot Password?</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={this.toggleLogin}>
+                    <TouchableOpacity style={styles.loginBtn} onPress={this.toggleLogin}>
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={this.toggleSignUp}>
+                    <TouchableOpacity style={styles.signUpBtn} onPress={this.toggleSignUp}>
                         <Text style={styles.loginText}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
@@ -112,7 +112,17 @@ const styles = StyleSheet.create({
         marginTop: 40,
         marginBottom: 10,
     },
+    signUpBtn: {
+        width: '80%',
+        backgroundColor: '#fb5b5a',
+        borderRadius: 25,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 10,
+    },
     loginText: {
         color: 'white',
     },
+
 });
