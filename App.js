@@ -1,19 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import SignUpScreen from "./components/SignUpScreen";
-import LoginScreen from "./components/LoginScreen";
 import ForgotPasswordScreen from "./components/ForgetPasswordScreen";
+import HomeScreen from "./components/HomeScreen";
 export default class App extends React.Component {
     state = {
         email: '',
         password: '' ,
-        showLogin: false ,
+        showHome: false ,
         showSignUp: false,
         showForgetPassword: false
     };
 
-    toggleLogin = () => {
-        this.setState(prevState => ({ showLogin: !prevState.showLogin }));
+    toggleHome = () => {
+        this.setState(prevState => ({ showHome: !prevState.showHome }));
     };
 
     toggleSignUp = () => {
@@ -30,8 +30,8 @@ export default class App extends React.Component {
         if (this.state.showForgetPassword) {
             return <ForgotPasswordScreen toggleForgetPassword={this.toggleForgetPassword}/>;
         }
-        if (this.state.showLogin) {
-           return <LoginScreen/>;
+        if (this.state.showHome) {
+           return <HomeScreen/>;
         }
 
         return (
@@ -60,7 +60,7 @@ export default class App extends React.Component {
                     <TouchableOpacity onPress={this.toggleForgetPassword}>
                         <Text style={styles.forgot}>Forgot Password?</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.loginBtn} onPress={this.toggleLogin}>
+                    <TouchableOpacity style={styles.loginBtn} onPress={this.toggleHome}>
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.signUpBtn} onPress={this.toggleSignUp}>

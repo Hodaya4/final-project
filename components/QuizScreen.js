@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 //שאלון שעל בסיסו אפשר לדעת צריך לחבר api
-const LoginScreen = () => {
+
+const QuizScreen = () => {
     const [responses, setResponses] = useState({});
 
     const handleResponseChange = (question, response) => {
@@ -18,7 +19,7 @@ const LoginScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Familiarization  Questionnaire</Text>
+            <Text style={styles.title}>Familiarization Questionnaire</Text>
             <Text style={styles.question}>What genres do you enjoy reading?</Text>
             <TextInput
                 style={styles.input}
@@ -45,7 +46,8 @@ const LoginScreen = () => {
             </TouchableOpacity>
         </View>
     );
-};
+}
+
 
 const styles = StyleSheet.create({
     container: {
@@ -77,12 +79,12 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     button: {
-         width: '50%',
-         height: 50,
-         backgroundColor: '#fb5b5a',
-         borderRadius: 25,
-         justifyContent: 'center',
-         alignItems: 'center',
+        width: '50%',
+        height: 50,
+        backgroundColor: '#fb5b5a',
+        borderRadius: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonText: {
         fontSize: 17,
@@ -92,5 +94,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginScreen;
 
+export default QuizScreen;
