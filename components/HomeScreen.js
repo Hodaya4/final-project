@@ -10,6 +10,7 @@ export default class HomeScreen extends React.Component {
         return (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
                 <View style={styles.container}>
+                    <TextInput>This will be our Home Page!!!</TextInput>
 
                 </View>
             </TouchableWithoutFeedback>
